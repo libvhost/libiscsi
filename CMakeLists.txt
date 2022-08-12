@@ -7,14 +7,12 @@ include(CheckCSourceCompiles)
 
 add_definitions(-DHAVE_CONFIG_H)
 
-if(NOT EXISTS ${PROJECT_SOURCE_DIR}/config.h)
-    execute_process(COMMAND ./autogen.sh
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-    )
-    execute_process(COMMAND ./configure
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-    )
-endif()
+execute_process(COMMAND ./autogen.sh
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+)
+execute_process(COMMAND ./configure
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR})
