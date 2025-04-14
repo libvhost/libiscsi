@@ -78,8 +78,8 @@ AM_CONDITIONAL([BUILD_EXAMPLES],
 
 AC_CONFIG_HEADERS([config.h])
 
-AC_CHECK_LIB([gcrypt], [gcry_control])
-AM_CONDITIONAL([HAVE_LIBGCRYPT], [test $ac_cv_lib_gcrypt_gcry_control = yes])
+#AC_CHECK_LIB([gcrypt], [gcry_control])
+AM_CONDITIONAL([HAVE_LIBGCRYPT], [false])
 
 # For MinGW.
 AC_CHECK_LIB([ws2_32], [gethostbyname])
